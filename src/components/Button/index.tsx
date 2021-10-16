@@ -1,14 +1,23 @@
-import {  Container } from "./styles";
-
+import { Container } from "./styles";
 interface ButtonProps {
     content: string;
-    to: string;
+    action(): any;
     buttonStyle: iButtonStyle;
+    buttonType?: iButtonType;
 }
 
-function Button({ content, to, buttonStyle }: ButtonProps) {
+function Button({ content, action, buttonStyle, buttonType }: ButtonProps) {
+
+    const handleClick = () => {
+        action();
+    }
+
     return (
-        <Container to={to} buttonStyle={buttonStyle}>
+        <Container
+            buttonStyle={buttonStyle}
+            type={buttonType}
+            onClick={handleClick}
+        >
             {content}
         </Container>
     );

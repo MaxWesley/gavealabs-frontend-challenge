@@ -1,26 +1,25 @@
-import styled from 'styled-components';
-
-import { Link } from 'react-router-dom';
-
+import styled, { css } from 'styled-components';
 interface ContainerProps {
     buttonStyle: iButtonStyle;
 }
 
-export const Container = styled(Link)<ContainerProps>`
+const confirm_button = css`
+    background-color: #FF6900;
+`;
+
+const outline_button = css`
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+`;
+
+export const Container = styled.button<ContainerProps>`
     width: 100%;
     max-width: 333px;
     height: 55px;
 
     border-radius: 4px;
 
-    ${props => props.buttonStyle === 'confirm' ?
-        'background-color: #FF6900;'
-        :
-        `
-            background-color: transparent;
-            border: 1px solid #FFFFFF;
-        `
-    }
+    ${props => props.buttonStyle === 'confirm' ? confirm_button : outline_button};
 
     color: #FFFFFF;
 
