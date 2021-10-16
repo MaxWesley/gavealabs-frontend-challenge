@@ -24,6 +24,12 @@ export const Container = styled.label`
 
     input {
         width: 100%;
+        font-family: 'Karla', sans-serif;
+        font-size: 16px;
+
+        &::placeholder {
+            color: #B1BEC2;
+        }
     }
 
     & + & {
