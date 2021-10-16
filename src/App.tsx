@@ -1,10 +1,5 @@
+import { Routes } from "./routes";
 
-function App() {
-  return (
-    <div className="App">
-      <h2>Gavea</h2>
-    </div>
-  );
-}
+const App = () => <Routes />
 
 export default App;
