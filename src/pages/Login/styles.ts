@@ -22,7 +22,7 @@ export const FormText = styled.h1`
 
     color: #092A34;
 
-    margin-top: 125px;
+    margin-top: calc(125px - 38px);
 
     span {
         display: block;
