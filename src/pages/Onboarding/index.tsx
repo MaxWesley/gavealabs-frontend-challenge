@@ -1,6 +1,7 @@
-import { Button, Container, Logo, WelcomeText } from "./styles";
+import { Container, Logo, WelcomeText } from "./styles";
 
 import LOGOGaveaPNG from '../../assets/images/logo-gavea.png';
+import { Button } from "../../components/Button";
 
 function Onboarding() {
     return (
@@ -15,12 +16,16 @@ function Onboarding() {
                     de commodities
                 </WelcomeText>
                 <section>
-                    <Button buttonStyle="confirm">
-                        Entrar
-                    </Button>
-                    <Button buttonStyle="outline">
-                        Criar Conta
-                    </Button>
+                    <Button 
+                        buttonStyle="confirm"
+                        content="Entrar"
+                        to='/login'  
+                    />
+                    <Button 
+                        buttonStyle="outline"
+                        content="Criar Conta"
+                        to='/sing-up'  
+                    />
                 </section>
             </main>
         </Container>
