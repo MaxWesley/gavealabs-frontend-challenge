@@ -1,0 +1,1 @@
+type iButtonStyle = 'outline' | 'confirm';
