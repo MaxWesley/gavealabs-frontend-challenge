@@ -1,9 +1,12 @@
+import { useHistory } from 'react-router-dom';
 import { Container, Logo, WelcomeText } from "./styles";
 
 import LOGOGaveaPNG from '../../assets/images/logo-gavea.png';
 import { Button } from "../../components/Button";
 
 function Onboarding() {
+    const router = useHistory();
+
     return (
         <Container>
             <header>
@@ -16,15 +19,15 @@ function Onboarding() {
                     de commodities
                 </WelcomeText>
                 <section>
-                    <Button 
+                    <Button
                         buttonStyle="confirm"
                         content="Entrar"
-                        to='/login'  
+                        action={() => router.push('/login')}
                     />
-                    <Button 
+                    <Button
                         buttonStyle="outline"
                         content="Criar Conta"
-                        to='/sing-up'  
+                        action={() => router.push('/sign-up')}
                     />
                 </section>
             </main>
