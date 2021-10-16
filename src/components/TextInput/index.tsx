@@ -30,6 +30,7 @@ function TextInput({ label, icon, isSecurity, inputType }: TextInputProps) {
                 type={((isSecurity && !showPassword) ? 'password' : "text") || inputType}
                 value={text}
                 onChange={handleChange}
+                required
             />
             {isSecurity &&
                 <button type="button" onClick={handleShowPassword}>
