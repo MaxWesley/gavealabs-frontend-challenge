@@ -159,10 +159,22 @@ export const THTable = styled.th`
     color: #B1BEC2;
 `;
 
-export const TDTable = styled.td`
+interface TDTableProps {
+    tagColor?: string;
+}
+
+export const TDTable = styled.td<TDTableProps>`
     font-size: 15px;
 
     margin: 10px 0;
+
+    &:last-of-type {
+        ${props => props.tagColor === 'green' ?
+            'color: #06A75C;'
+            :
+            'color: #ED0000;'
+        }
+    }
 
     &:first-of-type {
         display: flex;

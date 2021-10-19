@@ -42,7 +42,7 @@ function Dashboard() {
                             </TDTable>
                             <TDTable>{item.pag}</TDTable>
                             <TDTable>{item.ton}</TDTable>
-                            <TDTable>{item.ammount}</TDTable>
+                            <TDTable tagColor={item.tagColor}>{item.ammount}</TDTable>
                         </TRTable>
                     ))}
                 </TableCommodities>
