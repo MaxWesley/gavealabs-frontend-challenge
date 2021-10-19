@@ -20,6 +20,16 @@ export const GlobalStyle = createGlobalStyle`
         outline: none;
     }
 
+    button {
+        cursor: pointer;
+
+        transition: filter 0.3s ease;
+        
+        &:hover {
+            filter: brightness(0.9);
+        }
+    }
+
     a {
         text-decoration: none;
     }
