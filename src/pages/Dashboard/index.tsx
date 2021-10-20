@@ -22,8 +22,12 @@ function Dashboard() {
         let splitName = name?.split(' ');
 
         let newName = `${splitName[0]} ${splitName[1]}`;
+        let initials = `${splitName[0].slice(0, 2)}`
 
-        return newName;
+        return {
+            name: newName,
+            initials
+        };
     };
 
     return (
@@ -32,10 +36,10 @@ function Dashboard() {
                 <img src={logoPNG} alt="Logo Gavea" />
                 <ProfileContainer>
                     <div className="imgProfile">
-                        <p>Fr</p>
+                        <p>{handleNameUser(user?.displayName).initials}</p>
                     </div>
                     <div className="infosProfile">
-                        <h1>Olá, {handleNameUser(user?.displayName)}</h1>
+                        <h1>Olá, {handleNameUser(user?.displayName).name}</h1>
                         <p>Gavea Marketplace</p>
                     </div>
                 </ProfileContainer>
