@@ -1,21 +1,23 @@
-import { ChangeEvent, HTMLInputTypeAttribute, useState } from "react";
+import { ChangeEvent, Dispatch, HTMLInputTypeAttribute, SetStateAction, useState } from "react";
 
 import { Container } from "./styles";
 
 import eyerIconPNG from '../../assets/images/icons/eyer.png';
-
 interface TextInputProps {
     label?: string;
     icon?: React.ReactNode;
     isSecurity?: boolean;
     inputType?: HTMLInputTypeAttribute;
+    value: any;
+    setValue: Dispatch<SetStateAction<string>>;
 }
 
-function TextInput({ label, icon, isSecurity, inputType }: TextInputProps) {
-    const [text, setText] = useState('');
+function TextInput({ label, icon, isSecurity, inputType, setValue, value }: TextInputProps) {
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleChange = (text: ChangeEvent<HTMLInputElement>) => setText(text.target.value);
+    const handleChange = (text: ChangeEvent<HTMLInputElement>) => {
+        setValue(text.target.value);
+    };
     
     const handleShowPassword = () => setShowPassword(current => !current);
 
@@ -28,7 +30,7 @@ function TextInput({ label, icon, isSecurity, inputType }: TextInputProps) {
                 id={`input-${label}`}
                 placeholder={label}
                 type={((isSecurity && !showPassword) ? 'password' : "text") || inputType}
-                value={text}
+                value={value}
                 onChange={handleChange}
                 required
             />
