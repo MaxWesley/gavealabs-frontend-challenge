@@ -9,6 +9,7 @@ import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 import { FormEvent, useState } from "react";
+import { toast } from "react-toastify";
 
 function SignUp() {
     const [name, setName] = useState('');
@@ -21,7 +22,11 @@ function SignUp() {
     const handleSubmit = (form: FormEvent) => {
         form.preventDefault();
 
-        signUp(email, password, name);
+        if(confirmPassword === password) {
+            signUp(email, password, name);
+        } else {
+            toast.error('As duas senhas não conferem. Tente novamente ...');
+        }
     }
 
     return (
