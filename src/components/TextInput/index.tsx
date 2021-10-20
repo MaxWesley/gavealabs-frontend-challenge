@@ -36,7 +36,7 @@ function TextInput({ label, icon, isSecurity, inputType, setValue, value }: Text
             />
             {isSecurity &&
                 <button type="button" onClick={handleShowPassword}>
-                    <img src={eyerIconPNG} />
+                    <img src={eyerIconPNG} alt='password icon' />
                 </button>
             }
         </Container>

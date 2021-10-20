@@ -33,21 +33,21 @@ function SignUp() {
                 <main>
                     <TextInput
                         label="Nome completo"
-                        icon={<img src={personaIconPNG} />}
+                        icon={<img src={personaIconPNG} alt="person icon" />}
                         inputType="text"
                         value={name}
                         setValue={setName}
                     />
                     <TextInput
                         label="Email"
-                        icon={<img src={emailIconPNG} />}
+                        icon={<img src={emailIconPNG} alt="email icon" />}
                         inputType="email"
                         value={email}
                         setValue={setEmail}
                     />
                     <TextInput
                         label="Senha"
-                        icon={<img src={lockerIconPNG} />}
+                        icon={<img src={lockerIconPNG} alt="locker icon" />}
                         inputType="password"
                         isSecurity={true}
                         value={password}
@@ -55,7 +55,7 @@ function SignUp() {
                     />
                     <TextInput
                         label="Confirmar Senha"
-                        icon={<img src={lockerIconPNG} />}
+                        icon={<img src={lockerIconPNG} alt="locker icon" />}
                         inputType="password"
                         isSecurity={true}
                         value={confirmPassword}

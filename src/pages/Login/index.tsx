@@ -31,14 +31,14 @@ function Login() {
                 <main>
                     <TextInput
                         label="Email"
-                        icon={<img src={emailIconPNG} />}
+                        icon={<img src={emailIconPNG} alt="Email icon" />}
                         inputType="email"
                         value={email}
                         setValue={setEmail}
                     />
                     <TextInput
                         label="Senha"
-                        icon={<img src={lockerIconPNG} />}
+                        icon={<img src={lockerIconPNG} alt="locker icon" />}
                         isSecurity={true}
                         value={password}
                         setValue={setPassword}

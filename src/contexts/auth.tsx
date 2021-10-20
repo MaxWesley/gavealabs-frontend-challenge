@@ -141,7 +141,7 @@ function AuthProvider({ children }: AuthProviderProps) {
         const listener = auth.onAuthStateChanged(listenAuth);
 
         return listener;
-    }, []);
+    }, [auth]);
 
     return (
         <Context.Provider value={{
