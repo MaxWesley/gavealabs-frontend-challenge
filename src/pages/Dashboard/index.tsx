@@ -1,29 +1,41 @@
-import { 
-    Container, 
-    Header, 
-    ProfileContainer, 
+import {
+    Container,
+    Content,
+    ProfileContainer,
     TableCommodities,
     TRTable,
     TDTable,
-    THTable, 
-    TRHeadTable
+    THTable,
+    TRHeadTable,
+    ButtonSair
 } from './styles';
 
 import logoPNG from '../../assets/images/logo-gavea.png';
 
 import { datas } from '../../services/datas';
+import { useAuth } from '../../hooks/auth';
 
 function Dashboard() {
-    return(
+    const { user, signOutUser } = useAuth();
+
+    const handleNameUser = (name: string = 'Nome Usuário') => {
+        let splitName = name?.split(' ');
+
+        let newName = `${splitName[0]} ${splitName[1]}`;
+
+        return newName;
+    };
+
+    return (
         <Container>
-            <Header>
+            <Content>
                 <img src={logoPNG} alt="Logo Gavea" />
                 <ProfileContainer>
                     <div className="imgProfile">
                         <p>Fr</p>
                     </div>
                     <div className="infosProfile">
-                        <h1>Olá, Francisco</h1>
+                        <h1>Olá, {handleNameUser(user?.displayName)}</h1>
                         <p>Gavea Marketplace</p>
                     </div>
                 </ProfileContainer>
@@ -37,7 +49,7 @@ function Dashboard() {
                     {datas.map(item => (
                         <TRTable tagColor={item.tagColor}>
                             <TDTable>
-                                <img src={item.img}alt={`icon ${item.part}`} />
+                                <img src={item.img} alt={`icon ${item.part}`} />
                                 {item.part}
                             </TDTable>
                             <TDTable>{item.pag}</TDTable>
@@ -46,7 +58,10 @@ function Dashboard() {
                         </TRTable>
                     ))}
                 </TableCommodities>
-            </Header>
+                <ButtonSair onClick={signOutUser}>
+                    Sair
+                </ButtonSair>
+            </Content>
         </Container>
     );
 }

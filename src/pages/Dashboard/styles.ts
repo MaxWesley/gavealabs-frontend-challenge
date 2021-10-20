@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const Header = styled.section`
+export const Content = styled.section`
     width: 100%;
     height: 150px;
 
@@ -190,4 +190,10 @@ export const TDTable = styled.td<TDTableProps>`
             margin-right: 10px;
         }
     }
+`;
+
+export const ButtonSair = styled.button`
+    margin-top: -4px;
+
+    background: none;
 `;
