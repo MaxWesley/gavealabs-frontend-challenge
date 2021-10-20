@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
 import { Onboarding } from './pages/Onboarding';
@@ -11,21 +12,21 @@ function Routes() {
 
     if (localStorage.getItem('isLogged') === 'false' || !user) {
         return (
-            <>
-                <Redirect to="/" />
+            <Fragment>
+                <Redirect to="/" exact />
                 <Route path="/" component={Onboarding} exact />
                 <Route path="/login" component={Login} exact />
                 <Route path="/sign-up" component={SignUp} exact />
-            </>
+            </Fragment>
         );
     }
 
     if (localStorage.getItem('isLogged') === 'true' || user) {
         return (
-            <>
-                <Redirect to="/dashboard" />
+            <Fragment>
+                <Redirect to="/dashboard" exact />
                 <Route path="/dashboard" component={Dashboard} exact />
-            </>
+            </Fragment>
         );
     }
 
