@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 interface ButtonProps {
     content: string;
-    action(): any;
+    action?(): any;
     buttonStyle: iButtonStyle;
     buttonType?: iButtonType;
 }
@@ -9,7 +9,9 @@ interface ButtonProps {
 function Button({ content, action, buttonStyle, buttonType }: ButtonProps) {
 
     const handleClick = () => {
-        action();
+        if(action) {
+            action();
+        }
     }
 
     return (
